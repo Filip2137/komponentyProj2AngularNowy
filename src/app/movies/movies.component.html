@@ -1,6 +1,6 @@
-<p>movies</p>
-<div class="movieList">
+<button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" [routerLink]="['addMovie',]">Add Movie</button>
+<div>
   <div *ngFor="let movie of movies">
-    <app-movie [movie]="movie"></app-movie>
+    <app-movie (click)="OnMovieClick(movie)" [movie]="movie"></app-movie>
   </div>
 </div>

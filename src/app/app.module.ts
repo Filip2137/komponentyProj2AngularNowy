@@ -13,6 +13,8 @@ import { SeancesComponent } from './seances/seances.component';
 import { MovieComponent } from './movies/movie/movie.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DatabaseServiceService } from 'src/services/database-service.service';
+import { MovieAddComponent } from './movies/movieAdd/movieAdd.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,7 @@ import { DatabaseServiceService } from 'src/services/database-service.service';
     MoviesComponent,
     SeancesComponent,
     MovieComponent,
+    MovieAddComponent,
   ],
   imports: [
     BrowserModule,

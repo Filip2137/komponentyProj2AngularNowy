@@ -18,6 +18,11 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  OnMovieClick(movie: Movie){
+    //TODO add redirection
+    console.log(movie)
+  }
+
   fetchMovies(){
     this._databaseService.getMovies().subscribe(
       (response) => {{
