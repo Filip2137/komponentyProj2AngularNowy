@@ -30,4 +30,8 @@ export class MoviesComponent implements OnInit {
       }}
     )
   }
+  postMovie(movie:any)
+  {
+    //return this._databaseService.postMovie()
+  }
 }
