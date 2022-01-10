@@ -155,14 +155,14 @@
     {
       "id": 2,
       "title": "Spider-man No Way Home",
-      "duration": 123,
+      "duration": "123",
       "image": "https://preview.redd.it/irr9oage52081.png?width=640&crop=smart&auto=webp&s=733290e1ebbc4b25bb5c5fc9e1b042de9186dd4a",
       "description": "Sit irure pariatur proident aliqua consectetur aute labore veniam consectetur eiusmod sunt Lorem aliquip deserunt."
     },
     {
       "id": 3,
       "title": "PITBULL",
-      "duration": 112,
+      "duration": "112",
       "image": "https://ftmp.helios.pl/Get/file/mvpstr/21358/1634808864",
       "description": "Sit irure pariatur proident aliqua consectetur aute labore veniam consectetur eiusmod sunt Lorem aliquip deserunt."
     },
@@ -170,26 +170,26 @@
       "id": 4,
       "title": "Bruhhhh",
       "description": "x",
-      "duration": 270,
+      "duration": "270",
       "image": "https://ftmp.helios.pl/Get/file/mvpstr/21364/1636372023"
     },
     {
       "title": "Szklanką po łapkach",
-      "duration": 210,
+      "duration": "210",
       "image": "https://fwcdn.pl/fpo/05/22/30522/7490271_1.3.jpg",
       "description": "Leslie Nielsen",
       "id": 5
     },
     {
       "title": "12 Mostów",
-      "duration": 33,
+      "duration": "33",
       "image": "https://www.weekendowo.pl/upload/images/22cdca4530a236c15df8243311bde875.jpg",
       "description": "policjant robi pif paf",
       "id": 6
     },
     {
       "title": "Grobowiec Świetlików",
-      "duration": 73,
+      "duration": "73",
       "image": "https://fwcdn.pl/fpo/46/55/34655/7589836.3.jpg",
       "description": "Historia dzieci próbujących przeżyć podczas ww2",
       "id": 7

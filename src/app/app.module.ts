@@ -14,9 +14,6 @@ import { MovieComponent } from './movies/movie/movie.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DatabaseServiceService } from 'src/services/database-service.service';
 import { MovieAddComponent } from './movies/movieAdd/movieAdd.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SeanceComponent } from './seances/seance/seance.component';
-import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +23,6 @@ import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
     SeancesComponent,
     MovieComponent,
     MovieAddComponent,
-    SeanceComponent,
-    SeanceAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +32,6 @@ import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
     MatIconModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
   ],
   providers: [HttpClient, DatabaseServiceService],
   bootstrap: [AppComponent]
