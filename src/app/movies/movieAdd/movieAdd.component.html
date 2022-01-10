@@ -1,7 +1,7 @@
 <p>Add movie page -> add forms</p>
 <div class="model-body">
     <h1>Add movie page</h1>
-    <form [formGroup]="formValue" (onSubmit)="postMovie()">
+    <form [formGroup]="formValue" (ngSubmit)="postMovie()">
         <div class="form-group">
             <label for="title">Title</label><br>
             <input type="text" name="title" formControlName="title" class="form-control" >

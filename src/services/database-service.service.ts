@@ -23,12 +23,12 @@ constructor(private http: HttpClient) { }
   }
   public postMovie(movie: Movie){
     return this.http.post(`${this.URL}/Movie`,
-    movie,
+    {title: movie.title, duration: movie.duration, image: movie.image, description: movie.description},
     )
   }
-  public putMovie(movie: Movie, id: number){
-    return this.http.post(`${this.URL}/Movie/${id}`,
-    movie,
+  public putMovie(movie: Movie){
+    return this.http.put(`${this.URL}/Movie/${movie.id}`,
+    {id: movie.id, title: movie.title, duration: movie.duration, image: movie.image, description: movie.description},
     )
   }
   public deleteMovie(id: number){
@@ -43,12 +43,17 @@ constructor(private http: HttpClient) { }
   }
   public postRoom(room: Room){
     return this.http.post(`${this.URL}/Room`,
-    room,
+    {
+    room_nr: room.room_nr,
+      seats_amount: room.seats_amount},
     )
   }
-  public putRoom(room: Room, id: number){
-    return this.http.post(`${this.URL}/Room/${id}`,
-    room,
+  public putRoom(room: Room){
+    return this.http.put(`${this.URL}/Room/${room.id}`,
+    {id: room.id,
+      room_nr: room.room_nr,
+        seats_amount: room.seats_amount},
+
     )
   }
   public deleteRoom(id: number){
@@ -63,12 +68,12 @@ constructor(private http: HttpClient) { }
   }
   public postSeance(seance: Seance){
     return this.http.post(`${this.URL}/Seance`,
-    seance,
+    {date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
-  public putSeance(seance: Seance, id: number){
-    return this.http.post(`${this.URL}/Seance/${id}`,
-    seance,
+  public putSeance(seance: Seance){
+    return this.http.post(`${this.URL}/Seance/${seance.id}`,
+    {id: seance.id, date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
   public deleteSeance(id: number){
@@ -82,12 +87,12 @@ constructor(private http: HttpClient) { }
   }
   public postTicket(ticket: Ticket){
     return this.http.post(`${this.URL}/Ticket`,
-    ticket,
+    {seanceID: ticket.seanceID, seatNr: ticket.seatNr, email: ticket.email, fullname: ticket.fullname},
     )
   }
-  public putTicket(ticket: Ticket, id: number){
-    return this.http.post(`${this.URL}/Ticket/${id}`,
-    ticket,
+  public putTicket(ticket: Ticket){
+    return this.http.post(`${this.URL}/Ticket/${ticket.id}`,
+    {id: ticket.id, seanceID: ticket.seanceID, seatNr: ticket.seatNr, email: ticket.email, fullname: ticket.fullname},
     )
   }
   public deleteTicket(id: number){

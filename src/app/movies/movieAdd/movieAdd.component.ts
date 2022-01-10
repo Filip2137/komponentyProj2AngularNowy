@@ -20,12 +20,13 @@ export class MovieAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
   postMovie()
   {
     let movie: Movie = new Movie(this.formValue.value.title, this.formValue.value.duration,
       this.formValue.value.image, this.formValue.value.description)
+    console.log(movie)
     this.api.postMovie(movie)
     .subscribe(res=>{
       console.log(res);
