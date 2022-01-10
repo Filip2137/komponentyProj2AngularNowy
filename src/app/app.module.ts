@@ -17,7 +17,7 @@ import { MovieAddComponent } from './movies/movieAdd/movieAdd.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeanceComponent } from './seances/seance/seance.component';
 import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
-
+import { MovieIndexComponent } from './movies/movieIndex/movieIndex.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,7 @@ import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
     MovieAddComponent,
     SeanceComponent,
     SeanceAddComponent,
+    MovieIndexComponent,
   ],
   imports: [
     BrowserModule,

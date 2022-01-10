@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {FormBuilder,FormGroup} from '@angular/forms';
 import { DatabaseServiceService } from 'src/services/database-service.service';
 import {Movie} from 'src/models/Movie';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-movieAdd',
   templateUrl: './movieAdd.component.html',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MovieAddComponent implements OnInit {
   formValue!: FormGroup;
-  constructor(private formbuilder: FormBuilder, private api:DatabaseServiceService, private router: Router){
+  constructor(private formbuilder: FormBuilder, private api:DatabaseServiceService, private location: Location){
     this.formValue=this.formbuilder.group({
       title: [''],
       duration: [''],
@@ -37,6 +37,6 @@ export class MovieAddComponent implements OnInit {
       alert("Mistake Oh no")
     })
     console.log(movie)
-    this.router.navigate(['/'])
+    this.location.back();
   }
 }

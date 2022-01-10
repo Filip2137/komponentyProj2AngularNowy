@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { Movie } from 'src/models/Movie';
 import { DatabaseServiceService } from 'src/services/database-service.service';
 
@@ -11,16 +12,11 @@ export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
 
-  constructor(private _databaseService : DatabaseServiceService) {
+  constructor(private _databaseService : DatabaseServiceService, private router: RouterModule) {
     this.fetchMovies()
    }
 
   ngOnInit(): void {
-  }
-
-  OnMovieClick(movie: Movie){
-    //TODO add redirection
-    console.log(movie)
   }
 
   fetchMovies(){

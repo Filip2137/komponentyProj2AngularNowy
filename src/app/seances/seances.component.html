@@ -1,6 +1,6 @@
 <button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" [routerLink]="['addSeance',]">Add Seance</button>
 <div>
     <div *ngFor="let seance of seances">
-        <app-seance (click)="OnSeanceClick(seance)" [seance]="seance"></app-seance>
+        <app-seance (click)="OnSeanceClick(seance)" [seance]="seance" [movie]="findMovie(seance)"></app-seance>
       </div>
 </div>

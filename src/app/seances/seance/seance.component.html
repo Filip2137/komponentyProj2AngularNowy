@@ -1,7 +1,8 @@
 <div class="seance-space">
-    <div class="seance-box">
+    <div *ngIf="movie" class="seance-box">
+    <img [src]="movie.image">
       <div class="layout">
-        <h1>TODO photo and moviename: {{seance.movieID}}</h1>
+        <h1>{{movie.title}}</h1>
         <p>Date: {{seance.date}}</p>
         <p>Hour: {{seance.hour}}</p>
         <p>Room Number: {{seance.roomID}}</p>
@@ -10,4 +11,3 @@
     </div>
     </div>
   </div>
-  

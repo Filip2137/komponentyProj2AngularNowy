@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/models/Movie';
 import { Seance } from 'src/models/Seance';
 
 @Component({
@@ -13,5 +14,5 @@ export class SeanceComponent implements OnInit {
   ngOnInit(): void {
   }
   @Input() seance!: Seance
-
+  @Input() movie!: Movie
 }
