@@ -11,6 +11,7 @@ export class MovieComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.movie.Id)
   }
   @Input() movie!: Movie
 }

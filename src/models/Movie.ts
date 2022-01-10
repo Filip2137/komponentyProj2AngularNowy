@@ -7,49 +7,52 @@
 //}
 
 export class Movie {
-  private _id: number
-  private _title: string
-  private _duration: number
-  private _image: string
-  private _description: string
+  private id: number
+  private title: string
+  private duration: number
+  private image: string
+  private description: string
 
-  constructor(id: number, title: string, duration: number, image: string, desc: string) {
-    this._id = id;
-    this._title = title;
-    this._duration = duration;
-    this._image = image;
-    this._description = desc;
-  };
-
-  get id(): number {
-    return this._id;
-  };
-  get title(): string {
-    return this._title;
-  };
-  get duration(): number {
-    return this._duration;
-  };
-  get image(): string {
-    return this._image;
-  };
-  get description(): string {
-    return this._description;
+  constructor(title: string, duration: number, image: string, desc: string, id?: number) {
+    if(id)
+      this.id = id;
+    else
+      this.id=0
+    this.title = title;
+    this.duration = duration;
+    this.image = image;
+    this.description = desc;
   };
 
-  set id(id: number) {
-    this._id = id;
+  get Id(): number {
+    return this.id;
   };
-  set title(title: string) {
-    this._title = title;
+  get Title(): string {
+    return this.title;
   };
-  set duration(duration: number) {
-    this._duration = duration;
+  get Duration(): number {
+    return this.duration;
   };
-  set image(image: string) {
-    this._image = image;
+  get Image(): string {
+    return this.image;
   };
-  set description(description: string) {
-    this._description = description;
+  get Description(): string {
+    return this.description;
+  };
+
+  set Id(id: number) {
+    this.id = id;
+  };
+  set Title(title: string) {
+    this.title = title;
+  };
+  set Duration(duration: number) {
+    this.duration = duration;
+  };
+  set Image(image: string) {
+    this.image = image;
+  };
+  set Description(description: string) {
+    this.description = description;
   };
 };
