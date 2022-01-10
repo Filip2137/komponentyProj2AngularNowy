@@ -1,1 +1,27 @@
 <p>Add movie page -> add forms</p>
+<div class="model-body">
+    <h1>Add movie page</h1>
+    <form [formGroup]="formValue">
+        <div class="form-group">
+            <label for="title">Title</label><br>
+            <input type="text" name="title" class="form-control" >
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="duration">Duration</label><br>
+            <input type="number" name="duration" class="form-control">
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="image">Image</label><br>
+            <input type="text" name="image" class="form-control" >
+        </div>
+        <pre></pre>
+        <div class="form-group">
+            <label for="description">Description</label><br>
+            <input type="text" name="description" class="form-control" >
+        </div>
+        <pre></pre>
+        <button mat-raised-button color="primary" type="submit">Add Movie</button>
+    </form>
+</div>
