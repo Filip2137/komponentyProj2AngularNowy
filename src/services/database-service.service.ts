@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Room } from 'src/models/Room';
 import { HttpClient } from '@angular/common/http';
+import { Ticket } from 'src/models/Ticket';
+import { Seance } from 'src/models/Seance';
+import { Movie } from 'src/models/Movie';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +15,9 @@ constructor(private http: HttpClient) { }
 
   private URL : string = "http://localhost:3000"
 
-  public getMovies() : Observable<Room[]>{
-    return this.http.get<Room[]>(
+  public getMovies() : Observable<Movie[]>{
+    console.log("service")
+    return this.http.get<Movie[]>(
       `${this.URL}/Movie`
     )
   }

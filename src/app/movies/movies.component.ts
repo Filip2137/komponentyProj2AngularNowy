@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/models/Movie';
+import { DatabaseServiceService } from 'src/services/database-service.service';
 
 @Component({
   selector: 'app-movies',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor() { }
+  movies: Movie[] = []
+
+  constructor(private _databaseService : DatabaseServiceService) {
+    this.fetchMovies()
+   }
 
   ngOnInit(): void {
   }
 
+  fetchMovies(){
+    this._databaseService.getMovies().subscribe(
+      (response) => {{
+        this.movies=response
+      }}
+    )
+  }
 }

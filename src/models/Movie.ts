@@ -1,5 +1,5 @@
 //change to class from interface (base it on Room class)
-interface Movie{
+export interface Movie{
   id: number,
   title: string,
   duration: number,

@@ -1,4 +1,4 @@
-interface Seance {
+export interface Seance {
   id: number;
   date: string;
   hour: string;
