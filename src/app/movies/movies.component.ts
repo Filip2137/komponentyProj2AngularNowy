@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Movie } from 'src/models/Movie';
 import { DatabaseServiceService } from 'src/services/database-service.service';
 
@@ -12,7 +12,7 @@ export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
 
-  constructor(private _databaseService : DatabaseServiceService, private router: RouterModule) {
+  constructor(private _databaseService : DatabaseServiceService, private router: Router) {
     this.fetchMovies()
    }
 
@@ -25,5 +25,8 @@ export class MoviesComponent implements OnInit {
         this.movies=response
       }}
     )
+  }
+  goToMovie(movie: Movie){
+    this.router.navigateByUrl(`/movies/${movie.id}`, { state: movie });
   }
 }

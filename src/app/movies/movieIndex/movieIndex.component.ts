@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
+import { Movie } from 'src/models/Movie';
 @Component({
   selector: 'app-movieIndex',
   templateUrl: './movieIndex.component.html',
@@ -8,7 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieIndexComponent implements OnInit {
 
-  constructor(private router : ActivatedRoute) { }
+  movie !: Movie
+  constructor(private router : ActivatedRoute){
+    let state = history.state
+    console.log(history.state)
+    if(state.title)
+      this.movie = new Movie(state.title, state.duration, state.image, state.description, state.id)
+   }
 
   ngOnInit() {
   }
