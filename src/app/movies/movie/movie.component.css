@@ -5,6 +5,11 @@ img {
 	height: 100%;
 	float: left;
 	width: 45%;
+	cursor: pointer;
+}
+
+button{
+	float:right;
 }
 
 .movie-space{
@@ -25,5 +30,4 @@ margin-left: 47%;
 	overflow: hidden;
 	margin: 5em auto;
 	height: fit-content;
-  cursor: pointer;
 }
