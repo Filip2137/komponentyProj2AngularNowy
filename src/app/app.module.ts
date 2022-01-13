@@ -22,6 +22,9 @@ import {MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MovieEditComponent } from './movies/movie-edit-add/movie-edit.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { SeanceIndexComponent } from './seances/seance-index/seance-index.component';
+import { TicketRoomComponent } from './seances/ticket-room/ticket-room.component';
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,8 @@ import {MatInputModule} from '@angular/material/input';
     SeanceAddComponent,
     MovieIndexComponent,
     MovieEditComponent,
+    SeanceIndexComponent,
+    TicketRoomComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import {MatInputModule} from '@angular/material/input';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatChipsModule,
   ],
   providers: [HttpClient, DatabaseServiceService, { 
     provide: MatDialogRef,
