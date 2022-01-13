@@ -3,7 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA,  } from '@angular/material/di
 import { Router, RouterModule } from '@angular/router';
 import { Movie } from 'src/models/Movie';
 import { DatabaseServiceService } from 'src/services/database-service.service';
-import { MovieEditComponent } from './movie-edit/movie-edit.component';
+import { MovieEditComponent } from './movie-edit-add/movie-edit.component';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
@@ -45,10 +45,22 @@ export class MoviesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(data => {
       console.log(data)
+      this._databaseService.putMovie(data.movie)
     })
   }
   deleteMovie(movieId: number){
     this._databaseService.deleteMovie(movieId).subscribe(
     )
+  }
+
+  addMovie(){
+    const dialogRef=this.dialog.open(MovieEditComponent, {
+      data: {
+      },
+    });
+    dialogRef.afterClosed().subscribe(data => {
+      console.log(data)
+      this._databaseService.postMovie(data.movie)
+    })
   }
 }

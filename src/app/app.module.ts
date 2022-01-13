@@ -19,7 +19,7 @@ import { SeanceComponent } from './seances/seance/seance.component';
 import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
 import { MovieIndexComponent } from './movies/movieIndex/movieIndex.component';
 import {MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
+import { MovieEditComponent } from './movies/movie-edit-add/movie-edit.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 @NgModule({

@@ -16,10 +16,11 @@ export class MovieComponent implements OnInit {
   @Input() movie!: Movie
   @Output() goToMovie = new EventEmitter<Movie>()
   @Output() editMovie = new EventEmitter<Movie>()
+  @Output() deleteMovie = new EventEmitter<number>()
   edit(){
     this.editMovie.emit(this.movie)
   }
   delete(){
-
+    this.deleteMovie.emit(this.movie.id)
   }
 }

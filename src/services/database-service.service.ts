@@ -21,6 +21,12 @@ constructor(private http: HttpClient) { }
       `${this.URL}/Movie`
     )
   }
+  public getMovieById(movieId: number) : Observable<Movie>{
+    console.log("service")
+    return this.http.get<Movie>(
+      `${this.URL}/Movie/${movieId}`
+    )
+  }
   public postMovie(movie: Movie){
     return this.http.post(`${this.URL}/Movie`,
     {title: movie.title, duration: movie.duration, image: movie.image, description: movie.description},
