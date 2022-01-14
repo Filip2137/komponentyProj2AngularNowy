@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import { SeanceIndexComponent } from './seances/seance-index/seance-index.component';
 import { TicketRoomComponent } from './seances/ticket-room/ticket-room.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { SeanceEditAddComponent } from './seances/seance-edit-add/seance-edit-add.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MovieEditComponent,
     SeanceIndexComponent,
     TicketRoomComponent,
+    SeanceEditAddComponent,
   ],
   imports: [
     BrowserModule,

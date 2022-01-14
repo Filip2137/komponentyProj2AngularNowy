@@ -1,6 +1,8 @@
 <div class="seance-space">
     <div *ngIf="movie" class="seance-box">
     <img [src]="movie.image">
+    <button mat-button (click)="delete()"><mat-icon>delete</mat-icon></button>
+    <button mat-button (click)="edit()"><mat-icon>edit</mat-icon></button>
       <div class="layout">
         <h1>{{movie.title}}</h1>
         <p>Date: {{seance.date}}</p>
