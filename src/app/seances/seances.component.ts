@@ -42,12 +42,7 @@ export class SeancesComponent implements OnInit {
       (response)=>{this.movies=response}
     )
   }
-  fetchRooms()
-  {
-    this._databaseService.getRooms().subscribe(
-      (response)=>{{this.rooms=response}}
-    )
-  }
+
 
   findMovie(seance: Seance): Movie{
     return this.movies.filter(p=>p.id===seance.movieID)[0]

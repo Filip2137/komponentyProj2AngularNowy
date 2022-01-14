@@ -44,9 +44,9 @@ constructor(private http: HttpClient) { }
     )
   }
 
-  public getRooms() : Observable<Room[]>{
-    return this.http.get<Room[]>(
-      `${this.URL}/Room`
+  public getRoomById(id: number) : Observable<Room>{
+    return this.http.get<Room>(
+      `${this.URL}/Room/${id}`
     )
   }
   public postRoom(room: Room){
@@ -84,8 +84,8 @@ constructor(private http: HttpClient) { }
     {date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
-  public putSeance(seance: Seance){
-    return this.http.post(`${this.URL}/Seance/${seance.id}`,
+  public putSeance(seance: Seance): Observable<Seance>{
+    return this.http.put<Seance>(`${this.URL}/Seance/${seance.id}`,
     {id: seance.id, date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
@@ -99,6 +99,7 @@ constructor(private http: HttpClient) { }
     )
   }
   public postTicket(ticket: Ticket){
+    console.log(ticket)
     return this.http.post(`${this.URL}/Ticket`,
     {seanceID: ticket.seanceID, seatNr: ticket.seatNr, email: ticket.email, fullname: ticket.fullname},
     )

@@ -2,7 +2,10 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MovieEditComponent } from 'src/app/movies/movie-edit-add/movie-edit.component';
+import { Room } from 'src/models/Room';
+import { Seance } from 'src/models/Seance';
 import { Ticket } from 'src/models/Ticket';
+import { TicketServiceService } from 'src/services/ticketService.service';
 
 @Component({
   selector: 'app-ticket-room',
@@ -11,18 +14,21 @@ import { Ticket } from 'src/models/Ticket';
 })
 export class TicketRoomComponent implements OnInit {
 
-  constructor(private _fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: Ticket[],
-  public dialogRef: MatDialogRef<MovieEditComponent>) {
+  constructor(private _fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: {tickets: Ticket[], seance: Seance, room: Room},
+  public dialogRef: MatDialogRef<MovieEditComponent>, private ticketService: TicketServiceService) {
     this.userDataForm = _fb.group({
       email:["", Validators.required],
       fullName:[""], //optional fullname
     })
+    console.log(data)
+    this.takenOptions=data.tickets.map(p=>p.seatNr-1)
+    this.rowAmount = Array.from(Array(data.room.seats_amount/10).keys())
+    this.columnAmount = Array.from(Array(10).keys())
   }
   userDataForm: FormGroup
-  rowAmount: Array<number> = Array.from(Array(6).keys())
-  columnAmount: Array<number> = Array.from(Array(15).keys())
-
-  @Input() takenOptions: Array<number> = []
+  rowAmount: Array<number>
+  columnAmount: Array<number>
+  takenOptions: Array<number> = []
   selectedOptions: Array<number> = []
   ngOnInit(): void {
   }
@@ -41,6 +47,12 @@ export class TicketRoomComponent implements OnInit {
   }
 
   submit(){
-    this.dialogRef.close({data:this.data});
   }
+
+  sendData(){
+    let tickets: Ticket[] = this.ticketService.prepareTicketData(this.userDataForm, this.selectedOptions, this.data.seance)
+    this.dialogRef.close({data: tickets});
+  }
+
+
 }

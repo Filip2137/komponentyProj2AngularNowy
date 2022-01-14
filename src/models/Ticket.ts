@@ -12,9 +12,12 @@ export class Ticket {
   private _seatNr: number
   private _email: string
   private _fullname?: string
-  
-  constructor(id: number, seanceID: number, seatNr: number, email: string, fullname?: string) {
-    this._id = id;
+
+  constructor(seanceID: number, seatNr: number, email: string, fullname?: string, id?: number) {
+    if(id)
+      this._id = id;
+    else
+      this._id = 0
     this._seanceID = seanceID;
     this._seatNr = seatNr;
     this._email = email;
