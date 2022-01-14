@@ -54,28 +54,31 @@ export class SeancesComponent implements OnInit {
   {
     const dialogRef=this.dialog.open(SeanceEditAddComponent,
       {
-        data:{
-          seance
-        },
+        data: seance,
       });
-      dialogRef.afterClosed().subscribe(data=>{
-        console.log(data)
-        this._databaseService.putSeance(data.seance)
+      dialogRef.afterClosed().subscribe(response=>{
+        console.log(response.data)
+        this._databaseService.putSeance(response.data)
+        let index=this.seances.findIndex(p=>p.id==response.data.id)
+        this.seances[index]=<Seance>response.data
       })
   }
   deleteSeance(seanceId: number)
   {
-    this._databaseService.deleteSeance(seanceId).subscribe()
+    this._databaseService.deleteSeance(seanceId).subscribe((response)=>
+    {
+      const index=this.seances.findIndex(p=>p.id==seanceId)
+      this.seances.splice(index,1)
+    })
   }
   addSeance()
   {
     const dialogRef=this.dialog.open(SeanceEditAddComponent,
       {
-        data:{},
+        data:null,
       });
-      dialogRef.afterClosed().subscribe(data=>{
-        console.log(data)
-        this._databaseService.putSeance(data.seance)
+      dialogRef.afterClosed().subscribe(response=>{
+        this._databaseService.postSeance(response.data).subscribe((response)=>this.seances.push(<Seance>response))
       })
   }
 

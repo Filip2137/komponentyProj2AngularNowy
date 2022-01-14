@@ -11,17 +11,17 @@ import { Movie } from 'src/models/Movie';
 })
 export class SeanceEditAddComponent implements OnInit {
  editForm: FormGroup 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private _fb: FormBuilder,
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Seance, private _fb: FormBuilder,
   public dialogRef: MatDialogRef<SeanceEditAddComponent>) {
-    if(data.seance)
+    if(data)
       this.editForm=this._fb.group(
         {
-          date: [data.seance.date],
-          hour: [data.seance.hour],
-          roomID:[data.seance.roomID],
-          movieID:[data.seance.movieID],
-          amountOf_sold_tickets:[data.seance.amountOf_sold_tickets],
-          amountOf_available_tickets:[data.seance.amountOf_available_tickets]
+          date: [data.date],
+          hour: [data.hour],
+          roomID:[data.roomID],
+          movieID:[data.movieID],
+          amountOf_sold_tickets:[data.amountOf_sold_tickets],
+          amountOf_available_tickets:[data.amountOf_available_tickets]
         }
       )
       else
@@ -42,19 +42,24 @@ export class SeanceEditAddComponent implements OnInit {
   }
   editSeance():void
   {
-    if(this.data.seance)
+    var pom=this.editForm.value.movieID;
+    var movie: number=+pom;
+    pom=this.editForm.value.roomID
+    var room:number=+pom
+    console.log(this.data)
+    if(this.data)
     {
-      this.data.seance.date=this.editForm.value.date
-      this.data.seance.hour=this.editForm.value.hour
-      this.data.seance.roomID=this.editForm.value.roomID
-      this.data.seance.movieID=this.editForm.value.movieID
-      this.data.seance.amountOf_sold_tickets=this.editForm.value.amountOf_sold_tickets
-      this.data.seance.amountOf_available_tickets=this.editForm.value.amountOf_available_tickets
-      this.data.edited=true
+      this.data.date=this.editForm.value.date
+      this.data.hour=this.editForm.value.hour
+      this.data.roomID=room
+      this.data.movieID=movie
+      this.data.amountOf_sold_tickets=this.editForm.value.amountOf_sold_tickets
+      this.data.amountOf_available_tickets=this.editForm.value.amountOf_available_tickets
     }
     else
-      this.data.seance=new Seance(this.editForm.value.date,this.editForm.value.hour,this.editForm.value.roomID,this.editForm.value.movieID,this.editForm.value.amountOf_sold_tickets,this.editForm.value.amountOf_available_tickets)
+      this.data=new Seance(this.editForm.value.date,this.editForm.value.hour,room,movie,this.editForm.value.amountOf_sold_tickets,this.editForm.value.amountOf_available_tickets)
     this.dialogRef.close({data:this.data})
+    console.log(this.data)
   }
 
 }
