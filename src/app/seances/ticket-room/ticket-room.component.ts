@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MovieEditComponent } from 'src/app/movies/movie-edit-add/movie-edit.component';
+import { Ticket } from 'src/models/Ticket';
 
 @Component({
   selector: 'app-ticket-room',
@@ -8,9 +11,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class TicketRoomComponent implements OnInit {
 
-  constructor(private _fb: FormBuilder) { 
+  constructor(private _fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: Ticket[],
+  public dialogRef: MatDialogRef<MovieEditComponent>) {
     this.userDataForm = _fb.group({
-      email:[""],
+      email:["", Validators.required],
       fullName:[""], //optional fullname
     })
   }
@@ -37,6 +41,6 @@ export class TicketRoomComponent implements OnInit {
   }
 
   submit(){
-
+    this.dialogRef.close({data:this.data});
   }
 }

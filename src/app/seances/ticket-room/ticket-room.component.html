@@ -1,21 +1,39 @@
 <form [formGroup]="userDataForm" (ngSubmit)="submit()">
+<h1 mat-dialog-title>
+Buy Tickets
+</h1>
+<mat-dialog-content>
+
+<mat-stepper linear>
+  <mat-step label="Info" [stepControl]="userDataForm">
     <mat-form-field appearance="standard">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-      <mat-form-field appearance="standard">
-        <mat-label>Full Name</mat-label>
-        <input matInput formControlName="fullName">
-        <mat-hint>Optional</mat-hint>
-      </mat-form-field>
-    
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName">
+      <mat-hint>Optional</mat-hint>
+    </mat-form-field>
+    <button [disabled]="!userDataForm.valid" mat-raised-button color="primary" matStepperNext>Next</button>
+  </mat-step>
+  <mat-step label="Seats">
     <mat-chip-list selectable multiple >
-    <div *ngFor="let column of columnAmount">
-        <div *ngFor="let row of rowAmount">
-            <mat-chip (click)="onOptionSelected(row*columnAmount.length+column)" 
-            [selected]="isSelected(row*columnAmount.length+column)">
-            {{row*columnAmount.length+column+1}}</mat-chip>
-        </div>
-    </div>
-</mat-chip-list>
+      <div *ngFor="let column of columnAmount">
+          <div *ngFor="let row of rowAmount">
+              <mat-chip (click)="onOptionSelected(row*columnAmount.length+column)"
+              [selected]="isSelected(row*columnAmount.length+column)">
+              {{row*columnAmount.length+column+1}}</mat-chip>
+          </div>
+      </div>
+  </mat-chip-list>
+  <button mat-button raised color='primary' type="submit">Buy</button>
+  </mat-step>
+
+</mat-stepper>
+
+
+
+
+</mat-dialog-content>
 </form>

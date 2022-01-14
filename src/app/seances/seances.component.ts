@@ -53,7 +53,7 @@ export class SeancesComponent implements OnInit {
     return this.movies.filter(p=>p.id===seance.movieID)[0]
   }
   goToSeance(seance: Seance){
-    this.router.navigateByUrl(`/seances/${seance.id}`,{state: seance});
+    this.router.navigateByUrl(`/seances/${seance.id}`,{state: {seance, movie: this.findMovie(seance)}});
   }
   editSeance(seance:Seance)
   {

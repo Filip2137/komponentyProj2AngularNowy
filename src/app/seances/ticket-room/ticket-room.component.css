@@ -11,3 +11,9 @@
     display: list-item;
     width:20%;
 }
+
+::ng-deep mat-stepper{
+  width: 100%;
+  transition: all 1ms;
+}
+

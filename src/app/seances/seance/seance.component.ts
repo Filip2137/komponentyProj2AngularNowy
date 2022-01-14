@@ -27,4 +27,8 @@ export class SeanceComponent implements OnInit {
     this.deleteSeance.emit(this.seance.id)
   }
 
+  goToSeanceMethod()
+  {
+    this.goToSeance.emit(this.seance)
+  }
 }

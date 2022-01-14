@@ -26,6 +26,7 @@ import { SeanceIndexComponent } from './seances/seance-index/seance-index.compon
 import { TicketRoomComponent } from './seances/ticket-room/ticket-room.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { SeanceEditAddComponent } from './seances/seance-edit-add/seance-edit-add.component';
+import { MatStepperModule} from '@angular/material/stepper'
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,8 +56,9 @@ import { SeanceEditAddComponent } from './seances/seance-edit-add/seance-edit-ad
     MatFormFieldModule,
     MatInputModule,
     MatChipsModule,
+    MatStepperModule,
   ],
-  providers: [HttpClient, DatabaseServiceService, { 
+  providers: [HttpClient, DatabaseServiceService, {
     provide: MatDialogRef,
     useValue: []
      } ],

@@ -74,6 +74,11 @@ constructor(private http: HttpClient) { }
       `${this.URL}/Seance`
     )
   }
+  public getSeanceById(seanceId: number) : Observable<Seance>{
+    return this.http.get<Seance>(
+      `${this.URL}/Seance/${seanceId}`
+    )
+  }
   public postSeance(seance: Seance){
     return this.http.post(`${this.URL}/Seance`,
     {date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
