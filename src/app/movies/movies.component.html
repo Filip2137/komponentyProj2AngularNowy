@@ -3,4 +3,5 @@
   <div *ngFor="let movie of movies">
     <app-movie (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
   </div>
+  <br>
 </div>

@@ -13,14 +13,14 @@ export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
 
-  constructor(private _databaseService : DatabaseServiceService, 
+  constructor(private _databaseService : DatabaseServiceService,
     private router: Router,
     private dialog: MatDialog,
     public dialogRef: MatDialogRef<Component>,
     ) {
 
     this.fetchMovies()
-    
+
    }
 
   ngOnInit(): void {
@@ -39,28 +39,30 @@ export class MoviesComponent implements OnInit {
 
   editMovie(movie: Movie){
     const dialogRef=this.dialog.open(MovieEditComponent, {
-      data: {
-        movie
-      },
+      data: movie,
     });
-    dialogRef.afterClosed().subscribe(data => {
-      console.log(data)
-      this._databaseService.putMovie(data.movie)
+    dialogRef.afterClosed().subscribe(response => {
+      console.log(response.data)
+      this._databaseService.putMovie(response.data)
+      let index = this.movies.findIndex(p=>p.id==response.data.id)
+      this.movies[index]=<Movie>response.data
     })
   }
   deleteMovie(movieId: number){
-    this._databaseService.deleteMovie(movieId).subscribe(
+    this._databaseService.deleteMovie(movieId).subscribe((response)=>
+      {
+        const index = this.movies.findIndex(p=>p.id==movieId)
+        this.movies.splice(index,1)
+      }
     )
   }
 
   addMovie(){
     const dialogRef=this.dialog.open(MovieEditComponent, {
-      data: {
-      },
+      data: null,
     });
-    dialogRef.afterClosed().subscribe(data => {
-      console.log(data)
-      this._databaseService.postMovie(data.movie)
+    dialogRef.afterClosed().subscribe(response => {
+      this._databaseService.postMovie(response.data).subscribe((response)=>this.movies.push(<Movie>response))
     })
   }
 }

@@ -28,11 +28,13 @@ constructor(private http: HttpClient) { }
     )
   }
   public postMovie(movie: Movie){
+    console.log(movie)
     return this.http.post(`${this.URL}/Movie`,
     {title: movie.title, duration: movie.duration, image: movie.image, description: movie.description},
     )
   }
   public putMovie(movie: Movie){
+    console.log(movie)
     return this.http.put(`${this.URL}/Movie/${movie.id}`,
     {id: movie.id, title: movie.title, duration: movie.duration, image: movie.image, description: movie.description},
     )

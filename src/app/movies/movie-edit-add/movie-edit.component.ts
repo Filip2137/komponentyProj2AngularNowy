@@ -10,15 +10,15 @@ import { Movie } from 'src/models/Movie';
 export class MovieEditComponent implements OnInit {
 
   editForm: FormGroup
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private _fb: FormBuilder,
+  constructor(@Inject(MAT_DIALOG_DATA) public data: Movie, private _fb: FormBuilder,
   public dialogRef: MatDialogRef<MovieEditComponent>) {
-    if(data.movie)
+    if(data)
       this.editForm = this._fb.group(
         {
-          title: [data.movie.title],
-          duration: [data.movie.duration],
-          image: [data.movie.image],
-          description: [data.movie.description]
+          title: [data.title],
+          duration: [data.duration],
+          image: [data.image],
+          description: [data.description]
         }
      )
      else
@@ -37,17 +37,18 @@ export class MovieEditComponent implements OnInit {
   }
 
   editMovie(): void {
-    if(this.data.movie)
+    console.log(this.data)
+    if(this.data)
     {
-      this.data.movie.title = this.editForm.value.title
-      this.data.movie.image= this.editForm.value.image
-      this.data.movie.duration = this.data.movie.duration
-      this.data.movie.description = this.data.movie.description
-      this.data.edited=true
+      this.data.title = this.editForm.value.title
+      this.data.image= this.editForm.value.image
+      this.data.duration = this.editForm.value.duration
+      this.data.description = this.editForm.value.description
     }
     else
-      this.data.movie = new Movie(this.editForm.value.title, this.data.movie.duration, this.editForm.value.image, this.data.movie.description)
+      this.data = new Movie(this.editForm.value.title, this.editForm.value.duration, this.editForm.value.image, this.editForm.value.description)
 
+      console.log(this.data)
     this.dialogRef.close({data:this.data});
   }
 
