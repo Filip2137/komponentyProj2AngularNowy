@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Favorite Animal</h1>
+<form [formGroup]="editForm" (ngSubmit)="editMovie()">
+<div mat-dialog-content class="contents">
+        <mat-form-field appearance="standard">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Image</mat-label>
+        <input matInput formControlName="image">
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Duration</mat-label>
+        <input matInput formControlName="duration" type="number">
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+      <button mat-button style="float: right" type="submit">Save</button>
+    </div>
+  </form>

@@ -1,6 +1,6 @@
-<button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" [routerLink]="['addMovie',]">Add Movie</button>
+<button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" (click)="addMovie()">Add Movie</button>
 <div>
-  <div *ngFor="let movie of movies" [routerLink]="[movie.id,]">
-    <app-movie [movie]="movie"></app-movie>
+  <div *ngFor="let movie of movies">
+    <app-movie (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
   </div>
 </div>

@@ -17,8 +17,11 @@ export class Seance {
   private _amountOf_sold_tickets: number
   private _amountOf_available_tickets: number
 
-  constructor(id: number, date: string, hour: string, roomID: number, movieID: number, aost: number, aoat: number) {
-    this._id = id;
+  constructor( date: string, hour: string, roomID: number, movieID: number, aost: number, aoat: number, id?: number) {
+    if(id)
+      this._id = id;
+    else
+      this._id=0
     this._date = date;
     this._hour = hour;
     this._roomID = roomID;

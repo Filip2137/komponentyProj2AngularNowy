@@ -1,6 +1,8 @@
 <div class="movie-space">
   <div class="movie-box">
-    <img [src]=movie.image>
+    <img [src]=movie.image (click)="goToMovie.emit(movie)">
+    <button mat-button (click)="delete()"><mat-icon>delete</mat-icon></button>
+    <button mat-button (click)="edit()"><mat-icon>edit</mat-icon></button>
     <div class="layout">
       <h1>{{movie.title}}</h1>
       <p>Duration: {{movie.duration}} min</p>

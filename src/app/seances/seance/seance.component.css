@@ -1,3 +1,16 @@
+img {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	float: left;
+	width: 45%;
+	cursor: pointer;
+}
+
+button{
+	float:right;
+}
 
 .seance-space{
   margin-left: 20%;
@@ -7,7 +20,7 @@
 
 .layout{
   margin-top:20%;
-  margin-left: 47%;
+margin-left: 47%;
 }
 
 .seance-box{
@@ -17,14 +30,4 @@
 	overflow: hidden;
 	margin: 5em auto;
 	height: fit-content;
-  cursor: pointer;
-}
-
-img {
-	display: inline-block;
-	position: relative;
-	overflow: hidden;
-	height: 100%;
-	float: left;
-	width: 45%;
 }
