@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Movie } from 'src/models/Movie';
+import { isNonEmpty } from 'src/validators/IsEmpty';
+import { isInRange } from 'src/validators/isInRange';
 
 @Component({
   templateUrl: './movie-edit.component.html',
@@ -15,10 +17,10 @@ export class MovieEditComponent implements OnInit {
     if(data)
       this.editForm = this._fb.group(
         {
-          title: [data.title],
-          duration: [data.duration],
-          image: [data.image],
-          description: [data.description]
+          title: [data.title, [Validators.required, isNonEmpty()]],
+          duration: [data.duration, [Validators.required, isInRange(30, 300)]],
+          image: [data.image, Validators.required],
+          description: [data.description, Validators.required]
         }
      )
      else

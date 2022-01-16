@@ -1,9 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Seance } from 'src/models/Seance';
 import { Room } from 'src/models/Room';
 import { Movie } from 'src/models/Movie';
+import { isDateBehind } from 'src/validators/isDateBehind';
 
 @Component({
   templateUrl: './seance-edit-add.component.html',
@@ -13,17 +14,18 @@ export class SeanceEditAddComponent implements OnInit {
  editForm: FormGroup 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Seance, private _fb: FormBuilder,
   public dialogRef: MatDialogRef<SeanceEditAddComponent>) {
-    if(data)
+    if(data) {
+      console.log("XD")
       this.editForm=this._fb.group(
         {
-          date: [data.date],
-          hour: [data.hour],
+          date: [data.date, [Validators.required, isDateBehind()]],
+          hour: [data.hour, Validators.required],
           roomID:[data.roomID],
           movieID:[data.movieID],
           amountOf_sold_tickets:[data.amountOf_sold_tickets],
           amountOf_available_tickets:[data.amountOf_available_tickets]
-        }
-      )
+        } 
+      ); }
       else
         this.editForm=this._fb.group(
           {
