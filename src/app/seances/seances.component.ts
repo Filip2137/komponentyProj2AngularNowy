@@ -12,10 +12,12 @@ import { Room } from 'src/models/Room';
   styleUrls: ['./seances.component.css']
 })
 export class SeancesComponent implements OnInit {
+  unfiltredSeances: Seance[]=[];
+  seances: Seance[]=[];
+  movies: Movie[]=[];
+  rooms: Room[]=[];
+  shouldFilter: boolean=false;
 
-  seances: Seance[]=[]
-  movies: Movie[]=[]
-  rooms: Room[]=[]
   constructor(private _databaseService: DatabaseServiceService,
     private router: Router,
     private dialog: MatDialog,
@@ -34,7 +36,7 @@ export class SeancesComponent implements OnInit {
   fetchSeances()
   {
     this._databaseService.getSeances().subscribe(
-      (response)=>{{this.seances=response}}
+      (response)=>{{this.seances=response; this.unfiltredSeances=response; console.log(this.unfiltredSeances); }}
     )
   }
   fetchMovies(){
@@ -43,6 +45,20 @@ export class SeancesComponent implements OnInit {
     )
   }
 
+  filterSeances() {
+    this.shouldFilter = !this.shouldFilter;
+    if(this.shouldFilter) {
+      this.seances = this.unfiltredSeances.filter(seance => {
+        var [day, month, year] = seance.date.split('.');
+        var sd = new Date(year+"-"+month+"-"+day);
+        var curr = new Date();
+        return sd >= curr;
+       }
+      )
+    } else {
+      this.seances = this.unfiltredSeances;
+    }
+  }
 
   findMovie(seance: Seance): Movie{
     return this.movies.filter(p=>p.id===seance.movieID)[0]
@@ -54,13 +70,13 @@ export class SeancesComponent implements OnInit {
   {
     const dialogRef=this.dialog.open(SeanceEditAddComponent,
       {
-        data:{
-          seance
-        },
+        data: seance,
       });
-      dialogRef.afterClosed().subscribe(data=>{
-        console.log(data)
-        this._databaseService.putSeance(data.seance)
+      dialogRef.afterClosed().subscribe(response=>{
+        console.log(response.data)
+        this._databaseService.putSeance(response.data)
+        let index=this.seances.findIndex(p=>p.id==response.data.id)
+        this.seances[index]=<Seance>response.data
       })
   }
   deleteSeance(seanceId: number)
@@ -74,7 +90,7 @@ export class SeancesComponent implements OnInit {
   {
     const dialogRef=this.dialog.open(SeanceEditAddComponent,
       {
-        data:{},
+        data:null,
       });
       dialogRef.afterClosed().subscribe(data=>{
         console.log(data)

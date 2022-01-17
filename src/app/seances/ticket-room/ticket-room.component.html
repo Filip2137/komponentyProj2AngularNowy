@@ -21,15 +21,21 @@ Buy Tickets
     <mat-chip-list selectable multiple >
       <div *ngFor="let column of columnAmount">
           <div *ngFor="let row of rowAmount">
+            <div *ngIf="takenOptions.includes(row*columnAmount.length+column); else elseBlock">
+              <mat-chip disabled>
+              {{row*columnAmount.length+column+1}}</mat-chip>
+            </div>
+            <ng-template #elseBlock>
+              
               <mat-chip (click)="onOptionSelected(row*columnAmount.length+column)"
               [selected]="isSelected(row*columnAmount.length+column)">
               {{row*columnAmount.length+column+1}}</mat-chip>
+            </ng-template>
           </div>
       </div>
   </mat-chip-list>
   <button mat-button raised color='primary' (click)="sendData()">Buy</button>
   </mat-step>
-
 </mat-stepper>
 
 
