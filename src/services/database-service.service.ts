@@ -85,6 +85,9 @@ constructor(private http: HttpClient) { }
     )
   }
   public putSeance(seance: Seance): Observable<Seance>{
+    console.log(seance)
+    console.log(`${this.URL}/Seance/${seance.id}`)
+
     return this.http.put<Seance>(`${this.URL}/Seance/${seance.id}`,
     {id: seance.id, date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
