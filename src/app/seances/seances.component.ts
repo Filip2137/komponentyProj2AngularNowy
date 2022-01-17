@@ -81,11 +81,10 @@ export class SeancesComponent implements OnInit {
   }
   deleteSeance(seanceId: number)
   {
-    this._databaseService.deleteSeance(seanceId).subscribe((response)=>
-    {
-      const index=this.seances.findIndex(p=>p.id==seanceId)
-      this.seances.splice(index,1)
-    })
+    this._databaseService.deleteSeance(seanceId).subscribe(
+      (response) => this.seances.splice(this.seances.indexOf(response),1)
+    )
+
   }
   addSeance()
   {
@@ -93,8 +92,9 @@ export class SeancesComponent implements OnInit {
       {
         data:null,
       });
-      dialogRef.afterClosed().subscribe(response=>{
-        this._databaseService.postSeance(response.data).subscribe((response)=>this.seances.push(<Seance>response))
+      dialogRef.afterClosed().subscribe(data=>{
+        console.log(data)
+        this._databaseService.postSeance(data.seance).subscribe((response)=> this.seances.push(response))
       })
   }
 

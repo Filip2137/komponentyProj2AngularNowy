@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeanceAddComponent } from './seance-add.component';
+import { SeanceDateComponent } from './seance-date.component';
 
-describe('SeanceAddComponent', () => {
-  let component: SeanceAddComponent;
-  let fixture: ComponentFixture<SeanceAddComponent>;
+describe('SeanceDateComponent', () => {
+  let component: SeanceDateComponent;
+  let fixture: ComponentFixture<SeanceDateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeanceAddComponent ]
+      declarations: [ SeanceDateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeanceAddComponent);
+    fixture = TestBed.createComponent(SeanceDateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,7 +11,7 @@ import { isDateBehind } from 'src/validators/isDateBehind';
   styleUrls: ['./seance-edit-add.component.css']
 })
 export class SeanceEditAddComponent implements OnInit {
- editForm: FormGroup 
+ editForm: FormGroup
   constructor(@Inject(MAT_DIALOG_DATA) public data: Seance, private _fb: FormBuilder,
   public dialogRef: MatDialogRef<SeanceEditAddComponent>) {
     if(data) {
@@ -24,7 +24,7 @@ export class SeanceEditAddComponent implements OnInit {
           movieID:[data.movieID],
           amountOf_sold_tickets:[data.amountOf_sold_tickets],
           amountOf_available_tickets:[data.amountOf_available_tickets]
-        } 
+        }
       ); }
       else
         this.editForm=this._fb.group(

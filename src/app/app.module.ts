@@ -16,7 +16,6 @@ import { DatabaseServiceService } from 'src/services/database-service.service';
 import { MovieAddComponent } from './movies/movieAdd/movieAdd.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeanceComponent } from './seances/seance/seance.component';
-import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
 import { MovieIndexComponent } from './movies/movieIndex/movieIndex.component';
 import {MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MovieEditComponent } from './movies/movie-edit-add/movie-edit.component';
@@ -26,7 +25,10 @@ import { SeanceIndexComponent } from './seances/seance-index/seance-index.compon
 import { TicketRoomComponent } from './seances/ticket-room/ticket-room.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { SeanceEditAddComponent } from './seances/seance-edit-add/seance-edit-add.component';
-import { MatStepperModule} from '@angular/material/stepper'
+import { MatStepperModule} from '@angular/material/stepper';
+import { SeanceDateComponent } from './seances/seance-date/seance-date.component'
+import {MatTableModule} from '@angular/material/table';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,12 +38,12 @@ import { MatStepperModule} from '@angular/material/stepper'
     MovieComponent,
     MovieAddComponent,
     SeanceComponent,
-    SeanceAddComponent,
     MovieIndexComponent,
     MovieEditComponent,
     SeanceIndexComponent,
     TicketRoomComponent,
     SeanceEditAddComponent,
+    SeanceDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,8 @@ import { MatStepperModule} from '@angular/material/stepper'
     MatInputModule,
     MatChipsModule,
     MatStepperModule,
+    MatTableModule,
+    Ng2SearchPipeModule,
   ],
   providers: [HttpClient, DatabaseServiceService, {
     provide: MatDialogRef,
