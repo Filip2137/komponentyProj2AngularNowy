@@ -19,7 +19,7 @@
   "Seance": [
     {
       "id": 1,
-      "date": "26.11.2021",
+      "date": "2021-11-26",
       "hour": "18:30",
       "roomID": 1,
       "movieID": 1,
@@ -28,7 +28,7 @@
     },
     {
       "id": 2,
-      "date": "6.12.2021",
+      "date": "2021-12-6",
       "hour": "15:30",
       "roomID": 2,
       "movieID": 3,
@@ -37,7 +37,7 @@
     },
     {
       "id": 3,
-      "date": "30.11.2021",
+      "date": "2021-11-30",
       "hour": "17:30",
       "roomID": 3,
       "movieID": 3,
@@ -46,7 +46,7 @@
     },
     {
       "id": 4,
-      "date": "31.12.2021",
+      "date": "2021-12-31",
       "hour": "20:15",
       "roomID": 1,
       "movieID": 2,
@@ -55,7 +55,7 @@
     },
     {
       "id": 5,
-      "date": "31.12.2021",
+      "date": "2021-12-31",
       "hour": "20:15",
       "roomID": 1,
       "movieID": 2,
@@ -63,7 +63,7 @@
       "amountOf_available_tickets": 90
     },
     {
-      "date": "07.12.2021",
+      "date": "2021-12-07",
       "hour": "08:54",
       "roomID": 1,
       "movieID": 1,
@@ -72,7 +72,7 @@
       "id": 6
     },
     {
-      "date": "07.12.2021",
+      "date": "2021-12-08",
       "hour": "14:00",
       "roomID": 2,
       "movieID": 5,
@@ -81,7 +81,7 @@
       "id": 7
     },
     {
-      "date": "08.12.2021",
+      "date": "2021-12-08",
       "hour": "08:00",
       "roomID": 2,
       "movieID": 2,
@@ -90,7 +90,7 @@
       "id": 8
     },
     {
-      "date": "08.12.2021",
+      "date": "2021-12-08",
       "hour": "16:13",
       "roomID": 1,
       "movieID": 1,
@@ -99,7 +99,7 @@
       "id": 9
     },
     {
-      "date": "08.12.2021",
+      "date": "2021-12-08",
       "hour": "16:40",
       "roomID": 1,
       "movieID": 1,
@@ -108,7 +108,7 @@
       "id": 10
     },
     {
-      "date": "24.12.2021",
+      "date": "2021-12-24",
       "hour": "16:58",
       "roomID": 1,
       "movieID": 1,
@@ -117,7 +117,7 @@
       "id": 11
     },
     {
-      "date": "07.12.2021",
+      "date": "2021-12-07",
       "hour": "18:18",
       "roomID": 1,
       "movieID": 1,
@@ -126,7 +126,7 @@
       "id": 12
     },
     {
-      "date": "08.12.2021",
+      "date": "2021-12-08",
       "hour": "18:34",
       "roomID": 1,
       "movieID": 1,
@@ -135,7 +135,7 @@
       "id": 13
     },
     {
-      "date": "16.12.2021",
+      "date": "2021-12-16",
       "hour": "18:37",
       "roomID": 1,
       "movieID": 1,
@@ -144,13 +144,31 @@
       "id": 14
     },
     {
-      "date": "17.02.2022",
+      "date": "2022-02-17",
       "hour": "15",
       "roomID": 1,
       "movieID": 1,
       "amountOf_available_tickets": 90,
       "amountOf_sold_tickets": 0,
       "id": 15
+    },
+    {
+      "date": "2022-01-18",
+      "hour": "18.20",
+      "roomID": 3,
+      "movieID": 1,
+      "amountOf_available_tickets": 90,
+      "amountOf_sold_tickets": 0,
+      "id": 16
+    },
+    {
+      "date": "2022-01-20",
+      "hour": "18.20",
+      "roomID": 3,
+      "movieID": 1,
+      "amountOf_available_tickets": 90,
+      "amountOf_sold_tickets": 0,
+      "id": 17
     }
   ],
   "Movie": [

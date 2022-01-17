@@ -26,7 +26,10 @@ import { SeanceIndexComponent } from './seances/seance-index/seance-index.compon
 import { TicketRoomComponent } from './seances/ticket-room/ticket-room.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { SeanceEditAddComponent } from './seances/seance-edit-add/seance-edit-add.component';
-import { MatStepperModule} from '@angular/material/stepper'
+import { MatStepperModule} from '@angular/material/stepper';
+import { SeanceDateComponent } from './seances/seance-date/seance-date.component'
+import {MatTableModule} from '@angular/material/table';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,7 @@ import { MatStepperModule} from '@angular/material/stepper'
     SeanceIndexComponent,
     TicketRoomComponent,
     SeanceEditAddComponent,
+    SeanceDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,8 @@ import { MatStepperModule} from '@angular/material/stepper'
     MatInputModule,
     MatChipsModule,
     MatStepperModule,
+    MatTableModule,
+    Ng2SearchPipeModule,
   ],
   providers: [HttpClient, DatabaseServiceService, {
     provide: MatDialogRef,
