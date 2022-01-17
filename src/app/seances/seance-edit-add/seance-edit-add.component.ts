@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Seance } from 'src/models/Seance';
 import { Room } from 'src/models/Room';
@@ -10,7 +10,7 @@ import { Movie } from 'src/models/Movie';
   styleUrls: ['./seance-edit-add.component.css']
 })
 export class SeanceEditAddComponent implements OnInit {
- editForm: FormGroup 
+ editForm: FormGroup
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private _fb: FormBuilder,
   public dialogRef: MatDialogRef<SeanceEditAddComponent>) {
     if(data.seance)

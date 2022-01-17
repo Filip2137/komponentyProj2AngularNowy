@@ -16,7 +16,6 @@ import { DatabaseServiceService } from 'src/services/database-service.service';
 import { MovieAddComponent } from './movies/movieAdd/movieAdd.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SeanceComponent } from './seances/seance/seance.component';
-import { SeanceAddComponent } from './seances/seance-add/seance-add.component';
 import { MovieIndexComponent } from './movies/movieIndex/movieIndex.component';
 import {MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MovieEditComponent } from './movies/movie-edit-add/movie-edit.component';
@@ -36,7 +35,6 @@ import { MatStepperModule} from '@angular/material/stepper'
     MovieComponent,
     MovieAddComponent,
     SeanceComponent,
-    SeanceAddComponent,
     MovieIndexComponent,
     MovieEditComponent,
     SeanceIndexComponent,

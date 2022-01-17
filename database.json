@@ -124,24 +124,6 @@
       "amountOf_sold_tickets": 0,
       "amountOf_available_tickets": 90,
       "id": 12
-    },
-    {
-      "date": "08.12.2021",
-      "hour": "18:34",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 13
-    },
-    {
-      "date": "16.12.2021",
-      "hour": "18:37",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 14
     }
   ],
   "Movie": [

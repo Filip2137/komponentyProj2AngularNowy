@@ -79,8 +79,8 @@ constructor(private http: HttpClient) { }
       `${this.URL}/Seance/${seanceId}`
     )
   }
-  public postSeance(seance: Seance){
-    return this.http.post(`${this.URL}/Seance`,
+  public postSeance(seance: Seance): Observable<Seance>{
+    return this.http.post<Seance>(`${this.URL}/Seance`,
     {date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
@@ -89,8 +89,8 @@ constructor(private http: HttpClient) { }
     {id: seance.id, date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
   }
-  public deleteSeance(id: number){
-    return this.http.delete(`${this.URL}/Seance/${id}`,
+  public deleteSeance(id: number) : Observable<Seance>{
+    return this.http.delete<Seance>(`${this.URL}/Seance/${id}`,
     )
   }
   public getTickets() : Observable<Ticket[]>{
