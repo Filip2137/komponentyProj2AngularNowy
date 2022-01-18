@@ -1,3 +1,19 @@
 <p>
   {{movie | json}}
 </p>
+
+
+<div class="container">
+  <ngx-charts-line-chart
+    [results]="data"
+    [xAxis]="true"
+    [yAxis]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    xAxisLabel="dates"
+    yAxisLabel="tickets">
+    [showGridLines]="false">
+  </ngx-charts-line-chart>
+  </div>
+
+  <p>{{data | json}}</p>

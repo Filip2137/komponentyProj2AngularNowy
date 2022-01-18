@@ -29,6 +29,8 @@ import { MatStepperModule} from '@angular/material/stepper';
 import { SeanceDateComponent } from './seances/seance-date/seance-date.component'
 import {MatTableModule} from '@angular/material/table';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatStepperModule,
     MatTableModule,
     Ng2SearchPipeModule,
+    NgxChartsModule,
   ],
   providers: [HttpClient, DatabaseServiceService, {
     provide: MatDialogRef,
