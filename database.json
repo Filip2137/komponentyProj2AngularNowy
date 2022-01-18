@@ -141,33 +141,6 @@
       "amountOf_sold_tickets": 0,
       "amountOf_available_tickets": 90,
       "id": 14
-    },
-    {
-      "date": "2022-02-17",
-      "hour": "15",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_available_tickets": 90,
-      "amountOf_sold_tickets": 0,
-      "id": 15
-    },
-    {
-      "date": "2022-01-18",
-      "hour": "18.20",
-      "roomID": 3,
-      "movieID": 1,
-      "amountOf_available_tickets": 90,
-      "amountOf_sold_tickets": 0,
-      "id": 16
-    },
-    {
-      "date": "2022-01-20",
-      "hour": "18.20",
-      "roomID": 3,
-      "movieID": 1,
-      "amountOf_available_tickets": 90,
-      "amountOf_sold_tickets": 0,
-      "id": 17
     }
   ],
   "Movie": [
@@ -226,6 +199,13 @@
       "image": "https://nonsa.pl/images/thumb/e/eb/TrollfaceProblem.jpg/300px-TrollfaceProblem.jpg",
       "description": "bruh",
       "id": 9
+    },
+    {
+      "id": 10,
+      "title": "bruh",
+      "duration": 222,
+      "image": "https://preview.redd.it/3saly1lio4361.png?auto=webp&s=381c2b38f24bf88f5b48d5e106328cc7ddc98f7d",
+      "description": "1"
     }
   ],
   "Ticket": [

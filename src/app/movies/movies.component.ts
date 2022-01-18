@@ -43,7 +43,7 @@ export class MoviesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(response => {
       console.log(response.data)
-      this._databaseService.putMovie(response.data)
+      this._databaseService.putMovie(response.data).subscribe()
       let index = this.movies.findIndex(p=>p.id==response.data.id)
       this.movies[index]=<Movie>response.data
     })

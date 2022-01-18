@@ -94,7 +94,7 @@ export class SeancesComponent implements OnInit {
         data:null,
       });
       dialogRef.afterClosed().subscribe((data)=>{
-        this._databaseService.postSeance(<Seance>data).subscribe((response)=> this.seances.push(response))
+        this._databaseService.postSeance(<Seance>data.data).subscribe((response)=> this.seances.push(response))
       })
   }
 
