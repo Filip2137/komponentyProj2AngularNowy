@@ -1,7 +1,7 @@
 <button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" (click)="addMovie()">Add Movie</button>
 <div>
   <div *ngFor="let movie of movies">
-    <app-movie (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
+    <app-movie [editable]="true" (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
   </div>
   <br>
 </div>

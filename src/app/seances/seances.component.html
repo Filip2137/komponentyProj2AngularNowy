@@ -2,6 +2,6 @@
 <input type="checkbox" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" (click)="filterSeances()"><label style="margin-left: 1rem;">Show only future seances</label>
 <div>
     <div *ngFor="let seance of seances">
-        <app-seance (goToSeance)="goToSeance($event)" (editSeance)="editSeance($event)" (deleteSeance)="deleteSeance($event)" [seance]="seance" [movie]="findMovie(seance)"></app-seance>
+        <app-seance [editable]="true" (goToSeance)="goToSeance($event)" (editSeance)="editSeance($event)" (deleteSeance)="deleteSeance($event)" [seance]="seance" [movie]="findMovie(seance)"></app-seance>
       </div>
 </div>

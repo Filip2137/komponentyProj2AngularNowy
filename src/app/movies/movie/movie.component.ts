@@ -17,6 +17,7 @@ export class MovieComponent implements OnInit {
   @Output() goToMovie = new EventEmitter<Movie>()
   @Output() editMovie = new EventEmitter<Movie>()
   @Output() deleteMovie = new EventEmitter<number>()
+  @Input() editable: boolean = false
   edit(){
     this.editMovie.emit(this.movie)
   }

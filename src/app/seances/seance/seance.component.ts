@@ -15,6 +15,8 @@ export class SeanceComponent implements OnInit {
   }
   @Input() seance!: Seance
   @Input() movie!: Movie
+  @Input() editable: boolean = false
+
   @Output() goToSeance=new EventEmitter<Seance>()
   @Output() editSeance= new EventEmitter<Seance>()
   @Output() deleteSeance=new EventEmitter<number>()
