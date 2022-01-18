@@ -1,4 +1,4 @@
-<div class="seance-space">
+<div class="seance-space" >
     <div *ngIf="movie" class="seance-box">
     <img [src]="movie.image" (click)="goToSeanceMethod()">
     <div *ngIf="editable">
@@ -6,9 +6,9 @@
       <button mat-button (click)="delete()"><mat-icon>delete</mat-icon></button>
       <button mat-button (click)="edit()"><mat-icon>edit</mat-icon></button>
     </div>
-      <div class="layout">
-        <h1>{{movie.title}}</h1>
-        <p>Date: {{seance.date}}</p>
+      <div class="layout" [appOldSeance]="!isOld()" >
+        <h1 >{{movie.title | titlecase}}</h1>
+        <p>Date: {{seance.date | datePiperoni}}</p>
         <p>Hour: {{seance.hour}}</p>
         <p>Room Number: {{seance.roomID}}</p>
         <p>Sold Tickets: {{seance.amountOf_sold_tickets}}</p>

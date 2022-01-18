@@ -49,9 +49,14 @@ export class SeancesComponent implements OnInit {
     this.shouldFilter = !this.shouldFilter;
     if(this.shouldFilter) {
       this.seances = this.unfiltredSeances.filter(seance => {
-        var [day, month, year] = seance.date.split('.');
-        var sd = new Date(year+"-"+month+"-"+day);
+        var [year, month, day] = seance.date.split('-');
+        let hour = seance.hour
+        if(hour.length<=4)
+          hour="0"+hour
+        let x = hour.split(':')
+        var sd = new Date(+year,+month,+day, +x[0], +x[1]);
         var curr = new Date();
+        console.log(sd)
         return sd >= curr;
        }
       )
@@ -59,6 +64,8 @@ export class SeancesComponent implements OnInit {
       this.seances = this.unfiltredSeances;
     }
   }
+
+  
 
   findMovie(seance: Seance): Movie{
     return this.movies.filter(p=>p.id===seance.movieID)[0]

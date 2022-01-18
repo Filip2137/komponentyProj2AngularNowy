@@ -6,7 +6,7 @@
       <button mat-button (click)="edit()"><mat-icon>edit</mat-icon></button>
     </div>
     <div class="layout">
-      <h1>{{movie.title}}</h1>
+      <h1>{{movie.title | titlecase}}</h1>
       <p>Duration: {{movie.duration}} min</p>
       <p>Description: {{movie.description}}</p>
   </div>

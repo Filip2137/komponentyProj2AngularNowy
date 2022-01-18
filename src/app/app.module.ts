@@ -30,7 +30,8 @@ import { SeanceDateComponent } from './seances/seance-date/seance-date.component
 import {MatTableModule} from '@angular/material/table';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-
+import { DatePipePipe } from 'src/pipes/date-pipe.pipe';
+import { OldSeanceDirective } from 'src/directives/oldSeance.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     TicketRoomComponent,
     SeanceEditAddComponent,
     SeanceDateComponent,
+    DatePipePipe,
+    OldSeanceDirective
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatTableModule,
     Ng2SearchPipeModule,
     NgxChartsModule,
+
   ],
+
   providers: [HttpClient, DatabaseServiceService, {
     provide: MatDialogRef,
     useValue: []

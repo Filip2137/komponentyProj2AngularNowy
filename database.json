@@ -46,16 +46,16 @@
     },
     {
       "id": 4,
-      "date": "2021-12-31",
+      "date": "2022-01-21",
       "hour": "20:15",
       "roomID": 1,
       "movieID": 2,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90
+      "amountOf_available_tickets": 90,
+      "amountOf_sold_tickets": 0
     },
     {
       "id": 5,
-      "date": "2021-12-31",
+      "date": "2021-12-07",
       "hour": "20:15",
       "roomID": 1,
       "movieID": 2,
@@ -107,7 +107,7 @@
       "id": 10
     },
     {
-      "date": "2021-12-24",
+      "date": "2021-12-12",
       "hour": "16:58",
       "roomID": 1,
       "movieID": 1,

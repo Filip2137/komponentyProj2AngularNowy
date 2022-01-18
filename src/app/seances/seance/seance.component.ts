@@ -33,4 +33,18 @@ export class SeanceComponent implements OnInit {
   {
     this.goToSeance.emit(this.seance)
   }
+  isOld(): boolean{
+    var [year, month, day] = this.seance.date.split('-');
+    let hour = this.seance.hour
+    if(hour.length<=4)
+      hour="0"+hour
+    let x = hour.split(':')
+    var sd = new Date(Date.UTC(+year,+month,+day));
+    console.log(this.seance)
+    console.log(sd)
+
+    var curr = new Date();
+    return sd >= curr;
+
+  }
 }
