@@ -80,7 +80,8 @@ export class SeancesComponent implements OnInit {
         data: seance,
       });
       dialogRef.afterClosed().subscribe((response)=>{
-        console.log(response.data)
+        if(!response)
+        return
         this._databaseService.putSeance(<Seance>response.data).subscribe((response)=> console.log(response))
         let index=this.seances.findIndex(p=>p.id==response.data.id)
         this.seances[index]=<Seance>response.data
@@ -101,6 +102,8 @@ export class SeancesComponent implements OnInit {
         data:null,
       });
       dialogRef.afterClosed().subscribe((data)=>{
+        if(!data)
+        return
         this._databaseService.postSeance(<Seance>data.data).subscribe((response)=> this.seances.push(response))
       })
   }

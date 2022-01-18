@@ -42,7 +42,8 @@ export class MoviesComponent implements OnInit {
       data: movie,
     });
     dialogRef.afterClosed().subscribe(response => {
-      console.log(response.data)
+      if(!response.data)
+        return
       this._databaseService.putMovie(response.data).subscribe()
       let index = this.movies.findIndex(p=>p.id==response.data.id)
       this.movies[index]=<Movie>response.data
@@ -62,6 +63,8 @@ export class MoviesComponent implements OnInit {
       data: null,
     });
     dialogRef.afterClosed().subscribe(response => {
+      if(!response)
+        return
       this._databaseService.postMovie(response.data).subscribe((response)=>this.movies.push(<Movie>response))
     })
   }

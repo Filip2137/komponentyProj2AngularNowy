@@ -40,8 +40,6 @@ export class SeanceComponent implements OnInit {
       hour="0"+hour
     let x = hour.split(':')
     var sd = new Date(Date.UTC(+year,+month,+day));
-    console.log(this.seance)
-    console.log(sd)
 
     var curr = new Date();
     return sd >= curr;

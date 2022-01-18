@@ -14,6 +14,7 @@ import { Room } from 'src/models/Room';
 export class SeanceDateComponent implements OnInit {
 
   seances: Seance[]=[]
+  unfilteredSeances: Seance[] = []
   movies: Movie[]=[]
   rooms: Room[]=[]
   //date: any
@@ -39,7 +40,8 @@ export class SeanceDateComponent implements OnInit {
   fetchSeances()
   {
     this._databaseService.getSeances().subscribe(
-      (response)=>{{this.seances=response}}
+      (response)=>{{this.seances=response
+      this.unfilteredSeances=response}}
     )
   }
   fetchMovies(){
@@ -55,18 +57,10 @@ export class SeanceDateComponent implements OnInit {
   }
   Search(date: string)
   {
-    if(date=="")
-    {
-      this.ngOnInit()
-    }
-    else
-    {
-      //this.ngOnInit()
-      console.log(date);
-      this.seances=this.seances.filter(res=>{
+      this.seances=this.unfilteredSeances.filter(res=>{
         return res.date.toLocaleLowerCase().match(date.toLocaleLowerCase());
       })
-    }
+    
   }
   
 

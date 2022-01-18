@@ -26,10 +26,10 @@ export class MovieEditComponent implements OnInit {
      else
      this.editForm = this._fb.group(
       {
-        title: [''],
-        duration: [''],
-        image: [''],
-        description: ['']
+        title: ['', [Validators.required, isNonEmpty()]],
+        duration: ['', [Validators.required, isInRange(30, 300)]],
+        image: ['', Validators.required],
+        description: ['', Validators.required]
       }
    )
 
