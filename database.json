@@ -19,7 +19,7 @@
   "Seance": [
     {
       "id": 1,
-      "date": "2021-11-26",
+      "date": "2022-02-06",
       "hour": "18:30",
       "roomID": 1,
       "movieID": 1,
@@ -28,12 +28,12 @@
     },
     {
       "id": 2,
-      "date": "2021-12-6",
+      "date": "2022-02-26",
       "hour": "15:30",
       "roomID": 2,
       "movieID": 3,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 60
+      "amountOf_available_tickets": 60,
+      "amountOf_sold_tickets": 0
     },
     {
       "id": 3,

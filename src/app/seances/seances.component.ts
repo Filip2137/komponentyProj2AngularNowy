@@ -72,9 +72,9 @@ export class SeancesComponent implements OnInit {
       {
         data: seance,
       });
-      dialogRef.afterClosed().subscribe(response=>{
+      dialogRef.afterClosed().subscribe((response)=>{
         console.log(response.data)
-        this._databaseService.putSeance(response.data)
+        this._databaseService.putSeance(<Seance>response.data).subscribe((response)=> console.log(response))
         let index=this.seances.findIndex(p=>p.id==response.data.id)
         this.seances[index]=<Seance>response.data
       })
@@ -82,7 +82,8 @@ export class SeancesComponent implements OnInit {
   deleteSeance(seanceId: number)
   {
     this._databaseService.deleteSeance(seanceId).subscribe(
-      (response) => this.seances.splice(this.seances.indexOf(response),1)
+      (response) => this.seances.splice(this.seances.indexOf(response),1),
+      (error) => console.log(error)
     )
 
   }
@@ -92,9 +93,8 @@ export class SeancesComponent implements OnInit {
       {
         data:null,
       });
-      dialogRef.afterClosed().subscribe(data=>{
-        console.log(data)
-        this._databaseService.postSeance(data.seance).subscribe((response)=> this.seances.push(response))
+      dialogRef.afterClosed().subscribe((data)=>{
+        this._databaseService.postSeance(<Seance>data).subscribe((response)=> this.seances.push(response))
       })
   }
 

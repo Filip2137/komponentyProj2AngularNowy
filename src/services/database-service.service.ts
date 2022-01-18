@@ -80,6 +80,7 @@ constructor(private http: HttpClient) { }
     )
   }
   public postSeance(seance: Seance): Observable<Seance>{
+    console.log(seance)
     return this.http.post<Seance>(`${this.URL}/Seance`,
     {date: seance.date, hour: seance.hour, roomID: seance.roomID, movieID: seance.movieID, amountOf_available_tickets: seance.amountOf_available_tickets, amountOf_sold_tickets: seance.amountOf_sold_tickets},
     )
