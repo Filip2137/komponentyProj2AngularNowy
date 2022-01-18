@@ -23,8 +23,8 @@
       "hour": "18:30",
       "roomID": 1,
       "movieID": 1,
-      "amountOf_available_tickets": 90,
-      "amountOf_sold_tickets": 0
+      "amountOf_available_tickets": 89,
+      "amountOf_sold_tickets": 1
     },
     {
       "id": 2,
@@ -67,9 +67,8 @@
       "hour": "08:54",
       "roomID": 1,
       "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 6
+      "amountOf_available_tickets": 87,
+      "amountOf_sold_tickets": 3
     },
     {
       "date": "2021-12-08",
@@ -250,6 +249,34 @@
       "email": "eses",
       "fullname": "",
       "id": 3
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 3,
+      "email": "wojtek@adasdas.pl",
+      "fullname": "Adasdas",
+      "id": 4
+    },
+    {
+      "seanceID": 6,
+      "seatNr": 1,
+      "email": "x@d.pl",
+      "fullname": "aaaa",
+      "id": 5
+    },
+    {
+      "seanceID": 6,
+      "seatNr": 2,
+      "email": "x@d.pl",
+      "fullname": "aaaa",
+      "id": 6
+    },
+    {
+      "seanceID": 6,
+      "seatNr": 3,
+      "email": "x@d.pl",
+      "fullname": "aaaa",
+      "id": 7
     }
   ]
 }
