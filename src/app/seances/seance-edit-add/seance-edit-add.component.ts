@@ -57,6 +57,8 @@ export class SeanceEditAddComponent implements OnInit {
       this.data.roomID=room
       this.data.movieID=movie
       this.data.amountOf_sold_tickets=this.editForm.value.amountOf_sold_tickets
+      this.data.amountOf_available_tickets=this.editForm.value.amountOf_sold_tickets
+
       if(this.data.amountOf_sold_tickets===0)
       this.dbService.getRoomById(room).subscribe((response)=>{
 

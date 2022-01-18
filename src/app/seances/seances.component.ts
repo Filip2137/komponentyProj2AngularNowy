@@ -36,8 +36,22 @@ export class SeancesComponent implements OnInit {
   fetchSeances()
   {
     this._databaseService.getSeances().subscribe(
-      (response)=>{{this.seances=response; this.unfiltredSeances=response; console.log(this.unfiltredSeances); }}
+      (response)=>{{this.seances=response; this.unfiltredSeances=response; console.log(this.unfiltredSeances);
+      this.seances=this.seances.sort(this.compare)
+      }}
     )
+  }
+  compare(seance1: Seance, seance2: Seance): number{
+    console.log(seance1.date, seance2.date,  +(Number.parseInt(seance1.date.replace('-',''))<= Number.parseInt(seance2.date.replace('-',''))))
+    let num1:number =+(Number.parseInt(seance1.date.replace('-','')+(seance1.hour.replace(':',''))))
+    let num2:number =+(Number.parseInt(seance2.date.replace('-','')+(seance2.hour.replace(':',''))))
+    if(num1>num2)
+    return 1
+    else if(num1==num2)
+      return 0
+    else
+    return -1
+    
   }
   fetchMovies(){
     this._databaseService.getMovies().subscribe(
@@ -90,7 +104,7 @@ export class SeancesComponent implements OnInit {
   deleteSeance(seanceId: number)
   {
     this._databaseService.deleteSeance(seanceId).subscribe(
-      (response) => this.seances.splice(this.seances.indexOf(response),1),
+      (response) => this.seances=this.seances.filter(p=>p.id!=seanceId),
       (error) => console.log(error)
     )
 

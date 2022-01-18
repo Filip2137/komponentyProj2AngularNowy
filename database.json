@@ -21,19 +21,10 @@
       "id": 1,
       "date": "2022-02-06",
       "hour": "18:30",
-      "roomID": 4,
+      "roomID": 3,
       "movieID": 1,
       "amountOf_available_tickets": 89,
       "amountOf_sold_tickets": 1
-    },
-    {
-      "id": 2,
-      "date": "2022-02-26",
-      "hour": "15:30",
-      "roomID": 2,
-      "movieID": 3,
-      "amountOf_available_tickets": 60,
-      "amountOf_sold_tickets": 0
     },
     {
       "id": 3,
@@ -43,15 +34,6 @@
       "movieID": 3,
       "amountOf_sold_tickets": 0,
       "amountOf_available_tickets": 60
-    },
-    {
-      "id": 4,
-      "date": "2022-01-21",
-      "hour": "20:15",
-      "roomID": 1,
-      "movieID": 2,
-      "amountOf_available_tickets": 90,
-      "amountOf_sold_tickets": 0
     },
     {
       "id": 5,
@@ -98,55 +80,10 @@
       "id": 9
     },
     {
-      "date": "2021-12-08",
-      "hour": "16:40",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 10
-    },
-    {
-      "date": "2021-12-12",
-      "hour": "16:58",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 11
-    },
-    {
-      "date": "2021-12-07",
-      "hour": "18:18",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 12
-    },
-    {
-      "date": "2021-12-08",
-      "hour": "18:34",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 13
-    },
-    {
-      "date": "2021-12-16",
-      "hour": "18:37",
-      "roomID": 1,
-      "movieID": 1,
-      "amountOf_sold_tickets": 0,
-      "amountOf_available_tickets": 90,
-      "id": 14
-    },
-    {
       "id": 15,
       "date": "2022-01-19",
       "hour": "14:30",
-      "roomID": 4,
+      "roomID": 3,
       "movieID": 7,
       "amountOf_available_tickets": 60,
       "amountOf_sold_tickets": 0
@@ -201,20 +138,6 @@
       "image": "https://fwcdn.pl/fpo/46/55/34655/7589836.3.jpg",
       "description": "Historia dzieci próbujących przeżyć podczas ww2",
       "id": 7
-    },
-    {
-      "title": "trollface",
-      "duration": 2138,
-      "image": "https://nonsa.pl/images/thumb/e/eb/TrollfaceProblem.jpg/300px-TrollfaceProblem.jpg",
-      "description": "bruh",
-      "id": 9
-    },
-    {
-      "id": 10,
-      "title": "bruh",
-      "duration": 222,
-      "image": "https://preview.redd.it/3saly1lio4361.png?auto=webp&s=381c2b38f24bf88f5b48d5e106328cc7ddc98f7d",
-      "description": "1"
     }
   ],
   "Ticket": [

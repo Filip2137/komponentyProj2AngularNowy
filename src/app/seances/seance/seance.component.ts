@@ -12,6 +12,7 @@ export class SeanceComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.seance)
   }
   @Input() seance!: Seance
   @Input() movie!: Movie

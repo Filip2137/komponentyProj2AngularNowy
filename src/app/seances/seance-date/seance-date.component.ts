@@ -29,9 +29,6 @@ export class SeanceDateComponent implements OnInit {
    }
   ngOnInit(): void {
     console.log("HABABAVA");
-    this._databaseService.getSeances().subscribe((response)=>{
-      this.seances=response;
-    })
   }
   OnSeanceClick(seance:Seance)
   {
@@ -40,8 +37,8 @@ export class SeanceDateComponent implements OnInit {
   fetchSeances()
   {
     this._databaseService.getSeances().subscribe(
-      (response)=>{{this.seances=response
-      this.unfilteredSeances=response}}
+      (response)=>{this.seances=response.sort(this.compare)
+      this.unfilteredSeances=this.seances}
     )
   }
   fetchMovies(){
@@ -60,6 +57,18 @@ export class SeanceDateComponent implements OnInit {
       this.seances=this.unfilteredSeances.filter(res=>{
         return res.date.toLocaleLowerCase().match(date.toLocaleLowerCase());
       })
+    
+  }
+
+  compare(seance1: Seance, seance2: Seance): number{
+    let num1:number =(Number.parseInt(seance1.date.replace('-','')+seance1.hour.replace(':','')))
+    let num2:number =(Number.parseInt(seance2.date.replace('-','')+seance2.hour.replace(':','')))
+    if(num1>num2)
+    return 1
+    else if(num1===num2)
+      return 0
+    else
+    return -1
     
   }
   
