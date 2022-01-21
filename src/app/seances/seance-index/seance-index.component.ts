@@ -76,7 +76,8 @@ export class SeanceIndexComponent implements OnInit {
   fetchRoom()
   {
     this._databaseService.getRoomById(this.seance.roomID).subscribe(
-      (response)=>{{this.room=response}}
+      (response)=>{{this.room=response
+      console.log(this.room)}}
     )
   }
   fetchTickets(){
