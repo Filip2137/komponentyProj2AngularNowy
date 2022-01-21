@@ -10,24 +10,12 @@
 
 export class Seance {
   private _id: number
-  private _date: string
-  private _hour: string
-  private _roomID: number
-  private _movieID: number
-  private _amountOf_sold_tickets: number
-  private _amountOf_available_tickets: number
 
-  constructor( date: string, hour: string, roomID: number, movieID: number, aost: number, aoat: number, id?: number) {
+  constructor(private _date: string, private _hour: string, private _roomID: number, private _movieID: number, private _amountOf_sold_tickets: number, private _amountOf_available_tickets: number, id?: number) {
     if(id)
       this._id = id;
     else
       this._id=0
-    this._date = date;
-    this._hour = hour;
-    this._roomID = roomID;
-    this._movieID = movieID;
-    this._amountOf_sold_tickets = aost;
-    this._amountOf_available_tickets = aoat;
   };
 
   get id(): number {

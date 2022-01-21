@@ -6,22 +6,18 @@
 //  description: string
 //}
 
-export class Movie {
-  private _id: number
-  private _title: string
-  private _duration: number
-  private _image: string
-  private _description: string
+import { defaultRippleAnimationConfig } from "@angular/material/core";
 
-  constructor(title: string, duration: number, image: string, desc: string, id?: number) {
-    if(id)
-      this._id = id;
+export class Movie {
+
+  private _id
+
+  constructor(private _title: string, private _duration: number, private _image: string, private _desc: string, _id?: number) {
+    if(_id)
+      this._id = _id;
     else
       this._id=0
-    this._title = title;
-    this._duration = duration;
-    this._image = image;
-    this._description = desc;
+
   };
 
   get id(): number {
@@ -37,7 +33,7 @@ export class Movie {
     return this._image;
   };
   get description(): string {
-    return this._description;
+    return this._desc;
   };
 
   set id(id: number) {
@@ -53,6 +49,6 @@ export class Movie {
     this._image = image;
   };
   set description(description: string) {
-    this._description = description;
+    this._desc = description;
   };
 };

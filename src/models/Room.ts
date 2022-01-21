@@ -1,12 +1,6 @@
 export class Room{
-  private _id: number
-  private _room_nr: number
-  private _seats_amount: number
 
-  constructor(id:number, room_nr:number, seats_amount:number){
-    this._id=id
-    this._room_nr=room_nr
-    this._seats_amount=seats_amount
+  constructor(private _id:number, private _room_nr:number, private _seats_amount:number){
   }
 
   get id():number{
@@ -28,3 +22,4 @@ export class Room{
     this._seats_amount=seats_amount
   }
 }
+

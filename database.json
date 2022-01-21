@@ -23,8 +23,8 @@
       "hour": "18:30",
       "roomID": 1,
       "movieID": 1,
-      "amountOf_available_tickets": 89,
-      "amountOf_sold_tickets": 1
+      "amountOf_available_tickets": 84,
+      "amountOf_sold_tickets": 6
     },
     {
       "id": 2,
@@ -257,6 +257,41 @@
       "email": "x@d.pl",
       "fullname": "aaaa",
       "id": 7
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 36,
+      "email": "Jan@wp.pl",
+      "fullname": "wadawd",
+      "id": 8
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 34,
+      "email": "Jan@wp.pl",
+      "fullname": "wadawd",
+      "id": 9
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 44,
+      "email": "Jan@wp.pl",
+      "fullname": "wadawd",
+      "id": 10
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 45,
+      "email": "Jan@wp.pl",
+      "fullname": "wadawd",
+      "id": 11
+    },
+    {
+      "seanceID": 1,
+      "seatNr": 46,
+      "email": "Jan@wp.pl",
+      "fullname": "wadawd",
+      "id": 12
     }
   ]
 }

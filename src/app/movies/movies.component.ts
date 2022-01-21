@@ -38,6 +38,8 @@ export class MoviesComponent implements OnInit {
   }
 
   editMovie(movie: Movie){
+    console.log(this.movies)
+    console.log(movie)
     const dialogRef=this.dialog.open(MovieEditComponent, {
       data: movie,
     });
