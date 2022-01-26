@@ -1,6 +1,12 @@
 <button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" (click)="addMovie()">Add Movie</button>
+<div style="margin-left:40%; margin-top:2rem">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Filter by title</mat-label>
+  <input matInput (input)="filterMovies($event)" placeholder="title">
+  </mat-form-field>
+</div>
 <div>
-  <div *ngFor="let movie of movies">
+  <div *ngFor="let movie of filteredMovies">
     <app-movie [editable]="true" (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
   </div>
   <br>

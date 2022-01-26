@@ -12,7 +12,7 @@ import { MovieEditComponent } from './movie-edit-add/movie-edit.component';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[] = []
-
+  filteredMovies: Movie[] = []
   constructor(private _databaseService : DatabaseServiceService,
     private router: Router,
     private dialog: MatDialog,
@@ -26,10 +26,15 @@ export class MoviesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  filterMovies(event: any){
+    this.filteredMovies=this.movies.filter(p=>p.title.toLowerCase().includes(event.target.value.toLowerCase()))
+  }
+
   fetchMovies(){
     this._databaseService.getMovies().subscribe(
       (response) => {{
         this.movies=response
+        this.filteredMovies = response
       }}
     )
   }
