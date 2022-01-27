@@ -32,6 +32,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DatePipePipe } from 'src/pipes/date-pipe.pipe';
 import { OldSeanceDirective } from 'src/directives/oldSeance.directive';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,7 @@ import { OldSeanceDirective } from 'src/directives/oldSeance.directive';
     MatTableModule,
     Ng2SearchPipeModule,
     NgxChartsModule,
-
+    MatButtonToggleModule,
   ],
 
   providers: [HttpClient, DatabaseServiceService, {

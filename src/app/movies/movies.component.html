@@ -1,13 +1,41 @@
-<button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);" (click)="addMovie()">Add Movie</button>
-<div style="margin-left:40%; margin-top:2rem">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+<button mat-raised-button color="primary" style="margin-left: 50%; margin-top:5rem; transform: scale(2);"
+        (click)="addMovie()">Add Movie
+</button>
+<div style="margin-left:30%; margin-top:2rem">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Filter by title</mat-label>
-  <input matInput (input)="filterMovies($event)" placeholder="title">
+    <input matInput (input)="filterMovies($event)" placeholder="title">
+
   </mat-form-field>
+  <div style="display:inline; margin-left:2rem">
+    <mat-button-toggle>
+      title
+      <mat-icon *ngIf="sort==0" (click)="descendingSort1()"><span class="material-icons md-18">expand_less</span></mat-icon>
+      <mat-icon  *ngIf="sort==0" (click)="ascendingSort1()"><span class="material-icons md-18">expand_more</span></mat-icon>
+      <mat-icon *ngIf="sort==-1" (click)="descendingSort1()"><span class="material-icons md-18">expand_less</span></mat-icon>
+      <mat-icon  *ngIf="sort==1" (click)="ascendingSort1()"><span class="material-icons md-18">expand_more</span></mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle>
+      duration
+      <mat-icon *ngIf="sort==0" (click)="descendingSort()"><span class="material-icons md-18">expand_less</span></mat-icon>
+      <mat-icon  *ngIf="sort==0" (click)="ascendingSort()"><span class="material-icons md-18">expand_more</span></mat-icon>
+      <mat-icon *ngIf="sort==-1" (click)="descendingSort()"><span class="material-icons md-18">expand_less</span></mat-icon>
+      <mat-icon  *ngIf="sort==1" (click)="ascendingSort()"><span class="material-icons md-18">expand_more</span></mat-icon>
+    </mat-button-toggle>
+  </div>
 </div>
+
+
+
+
 <div>
   <div *ngFor="let movie of filteredMovies">
-    <app-movie [editable]="true" (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)" (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
+    <app-movie [editable]="true" (goToMovie)="goToMovie($event)" (editMovie)="editMovie($event)"
+               (deleteMovie)="deleteMovie($event)" [movie]="movie"></app-movie>
   </div>
   <br>
 </div>
