@@ -78,7 +78,13 @@ export class MoviesComponent implements OnInit {
 
   resetSort(){
     this.sort=0
-    this.filteredMovies=this.movies;
+    this.filteredMovies=this.movies.sort((a,b)=>{
+      if (a.id > b.id)
+          return 1
+        else
+          return -1
+      }
+    );
   }
 
   fetchMovies() {

@@ -26,6 +26,11 @@
       <mat-icon *ngIf="sort==-1" (click)="descendingSort()"><span class="material-icons md-18">expand_less</span></mat-icon>
       <mat-icon  *ngIf="sort==1" (click)="ascendingSort()"><span class="material-icons md-18">expand_more</span></mat-icon>
     </mat-button-toggle>
+    <mat-button-toggle style="margin-left: 50px" (click)="resetSort()">
+      <div (click)="resetSort()">
+        reset
+      </div>
+    </mat-button-toggle>
   </div>
 </div>
 
